@@ -18,6 +18,10 @@ public class PictureTester
     beach.explore();
   }
   
+  public static void testGlitch()
+  {
+	  Picture beach = new Picture("beach.jpg");
+  }
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {

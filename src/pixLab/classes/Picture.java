@@ -244,4 +244,33 @@ public class Picture extends SimplePicture
     beach.explore();
   }
   
+  public void glitchFilter()
+  {
+	  Pixel [][] pixels = this.getPixels2D();
+	  int shiftAmount = (int) (.33 * pixels[0].length);
+	  int width = pixels[0].length;
+	  Pixel leftPixel = null;
+	  Pixel rightPixel = null;
+	  Pixel midPixel = null;
+	  
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  leftPixel = pixels [row][col];
+			  rightPixel = pixels [row][(width - shiftAmount + col) % width];
+			  midPixel = pixels [row][(col + shiftAmount) % width];
+			 
+			  Color leftColor = leftPixel.getColor();
+			  Color rightColor = rightPixel.getColor();
+			  Color midColor  = midPixel.getColor();
+			  
+			  leftPixel.setColor(rightPixel.getColor());
+			  rightPixel.setColor(midColor);
+			  midPixel.setColor(leftColor);
+			  
+		  }
+	  }
+  }
+  
 } // this } is the end of class Picture, put all new methods before this
