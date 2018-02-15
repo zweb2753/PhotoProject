@@ -7,7 +7,7 @@ import java.text.*;
 import java.util.*;
 import java.util.List;
 
-public class classFilter 
+public class classFilter
 {
 	for (int row = 0; row < 20; row++)
 	{
